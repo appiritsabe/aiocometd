@@ -113,7 +113,8 @@ class WebSocketTransport(TransportBase):
             ssl=self.ssl,
             headers=headers,
             receive_timeout=self.request_timeout,
-            autoping=True)
+            autoping=True,
+            heartbeat=True)
 
     def _create_exhange_future(self, payload: Payload) \
             -> "asyncio.Future[JsonObject]":
